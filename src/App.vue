@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import Home from './components/Home.vue'
+import Nav from './components/Navigation.vue'
+import Home from './components/Header.vue'
 import WeatherWidget from './components/WeatherWidget.vue'
 </script>
 
 <template>
-  <div class="p-6 ">
+  <div>
+    <Nav />
     <Home />
     <WeatherWidget />
   </div>
-
 </template>
