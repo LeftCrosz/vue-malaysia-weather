@@ -106,7 +106,7 @@ async function fetchWeather() {
     <div
       v-for="(loc, i) in locations"
       :key="i"
-      class="flex flex-col justify-center border w-50 p-3 bg-green-500 text-white hover:scale-115 transition duration-300 ease-in-out"
+      class="flex flex-col justify-center border w-50 p-3 bg-green-800 text-white hover:scale-115 transition duration-300 ease-in-out"
     >
       <ion-icon
         class="flex items-center justify-center w-full text-3xl"

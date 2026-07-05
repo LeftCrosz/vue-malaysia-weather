@@ -25,10 +25,10 @@ function togglefaq(faq: faqItems) {
       class="flex flex-col justify-center items-center select-none cursor-pointer"
     >
       <div
-        class="text-[20px] font-bold min-w-200 max-w-200 p-3 border-gray-200"
+        class="text-[20px] font-bold p-3 border-gray-200 w-full max-w-3xl"
         :class="{
-          'bg-green-400 text-black': index % 2 != 0,
-          'bg-green-600 text-zinc-200': index % 2 == 0,
+          'bg-gray-400 text-black': index % 2 != 0,
+          'bg-gray-600 text-zinc-200': index % 2 == 0,
         }"
       >
         <div class="flex justify-between items-center">
@@ -40,7 +40,7 @@ function togglefaq(faq: faqItems) {
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="size-6"
+            class="size-6 shrink-0"
             :class="{ 'rotate-45': faq.open }"
           >
             <path
