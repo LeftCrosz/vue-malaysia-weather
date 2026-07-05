@@ -43,7 +43,7 @@ async function fetchWeather() {
 </script>
 
 <template>
-  <section class="flex flex-row justify-center gap-8 my-10 px-10 font-[Poppins]">
+  <section class="flex flex-col items-center justify-center gap-8 my-10 px-10 font-[Poppins] lg:flex-row">
     <div
       v-for="(loc, i) in locations"
       :key="i"

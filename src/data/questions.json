@@ -1,27 +1,17 @@
 [
   {
-    "question": "Question 1",
-    "answer": "Answer 1",
+    "question": "Where does the weather forecast data come from?",
+    "answer": "The data is provided by MET Malaysia",
     "open": false
   },
   {
-    "question": "Question 2",
-    "answer": "Answer 2",
+    "question": "What's included in a forecast?",
+    "answer": "Location, date, and min/max temperature.",
     "open": false
   },
   {
-    "question": "Question 3",
-    "answer": "Answer 3",
-    "open": false
-  },
-  {
-    "question": "Question 4",
-    "answer": "Answer 4",
-    "open": false
-  },
-  {
-    "question": "Question 5",
-    "answer": "Answer 5",
+    "question": "What tech stack is used?",
+    "answer": "Vue 3, TypeScript, TailwindCSS for styling",
     "open": false
   }
 ]
