@@ -1,9 +1,12 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section class="flex flex-col md:flex-row font-[Poppins] p-6 sm:p-10 lg:p-20 gap-6 bg-gray-100">
+  <section class="relative h-50% w-full overflow-hidden flex flex-col md:flex-row font-[Poppins]">
+    <video autoplay muted loop playsinline class="absolute insert-0 w-full h-full object-cover z-0">
+      <source src="../assets/hero.mp4" type="video/mp4" />
+    </video>
     <div
-      class="flex flex-col items-center text-center lg:text-left sm:items-start justify-end w-full md:w-auto lg:pl-40"
+      class="relative flex flex-col items-center text-center lg:text-left sm:items-start justify-end w-full md:w-auto lg:p-40 text-white h-full mt-10"
     >
       <h2
         class="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase select-none leading-tight"
@@ -12,11 +15,11 @@
       </h2>
       <p class="font-semibold text-sm sm:text-base select-none">Malaysia Weather Forecast</p>
     </div>
-    <div class="flex items-center justify-center w-full p-2 sm:p-5">
+    <div class="relative flex items-center justify-center w-full p-2 sm:p-5 text-white mb-10">
       <svg
         class="transition duration-800 hover:rotate-35"
-        width="200"
-        height="100%"
+        width="30%"
+        height="auto"
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

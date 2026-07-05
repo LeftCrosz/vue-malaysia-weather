@@ -10,12 +10,6 @@ function onToggleMenu() {
 </script>
 
 <template>
-  <header class="relative font-[Poppins]">
-    <p class="flex h-10 bg-amber-500 items-center justify-center text-sm font-medium">
-      MET Malaysia Weather API
-    </p>
-  </header>
-
   <nav
     class="flex items-center justify-between font-[Poppins] px-12 uppercase bg-gray border-b-2 border-slate-300 lg:static lg:flex-row lg:justify-between lg:gap-8"
   >
@@ -26,8 +20,8 @@ function onToggleMenu() {
     </div>
 
     <div
-      :class="{ '-top-full': !dropdown, 'top-20': dropdown }"
-      class="absolute -top-full left-0 max-lg:bg-white w-full flex flex-col gap-8 items-center lg:static lg:flex-row lg:justify-between"
+      :class="{ '-top-full': !dropdown, 'top-10': dropdown }"
+      class="absolute z-30 -top-full left-0 max-lg:bg-white w-full flex flex-col gap-8 items-center lg:static lg:flex-row lg:justify-between"
     >
       <ul class="flex flex-col m-2 font-semibold lg:flex-row lg:gap-8">
         <li
