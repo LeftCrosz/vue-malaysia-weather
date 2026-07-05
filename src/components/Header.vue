@@ -2,15 +2,17 @@
 
 <template>
   <section
-    class="flex flex-col md:flex-row font-[Poppins] p-6 sm:p-10 lg:p-20 gap-6 bg-linear-to-r from-yellow-200 to-red-200"
+    class="flex flex-col md:flex-row font-[Poppins] p-6 sm:p-10 lg:p-20 gap-6 bg-linear-to-r from-yellow-400 to-red-200"
   >
-    <div class="flex flex-col lg:items-start sm:items-center justify-end w-full md:w-auto lg:pl-40">
+    <div
+      class="flex flex-col items-center text-center lg:text-left sm:items-start justify-end w-full md:w-auto lg:pl-40"
+    >
       <h2
         class="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase select-none leading-tight"
       >
         Bring Umbrella or Nah?
       </h2>
-      <p class="font-semibold text-sm sm:text-base">Malaysia Weather Forecast</p>
+      <p class="font-semibold text-sm sm:text-base select-none">Malaysia Weather Forecast</p>
     </div>
     <div class="flex items-center justify-center w-full p-2 sm:p-5">
       <svg

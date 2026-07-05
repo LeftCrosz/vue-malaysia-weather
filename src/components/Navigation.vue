@@ -1,4 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue'
+const menu = ref('menu-outline')
+const dropdown = ref(false)
+
+function onToggleMenu() {
+  menu.value = menu.value === 'menu-outline' ? 'close' : 'menu-outline'
+  dropdown.value = dropdown.value === false ? true : false
+}
+</script>
 
 <template>
   <header class="relative font-[Poppins]">
@@ -8,20 +17,43 @@
   </header>
 
   <nav
-    class="flex items-center justify-between font-[Poppins] pl-25 pr-25 uppercase bg-gray-100 border-b-2 border-slate-300"
+    class="flex items-center justify-between font-[Poppins] px-12 uppercase bg-gray border-b-2 border-slate-300 lg:static lg:flex-row lg:justify-between lg:gap-8"
   >
     <div>
-      <h1 class="relative font-bold cursor-pointer text-[30px] text-shadow-lg">myweather</h1>
+      <h1 class="relative font-bold cursor-pointer text-[30px] text-shadow-lg whitespace-nowrap">
+        WEATHER APP
+      </h1>
     </div>
 
-    <ul class="flex items-center justify-center flex-row space-x-5 m-2 font-semibold">
-      <li
-        class="p-1.5 hover:bg-gray-700 hover:rounded-[5px] hover:text-white transition-all duration-600"
-      >
-        <a href="">Home</a>
-      </li>
-      <li class="p-1.5 hover:bg-gray-700 hover:rounded-[5px] hover:text-white transition-all duration-600"><a href="">Weather</a></li>
-      <li class="p-1.5 hover:bg-gray-700 hover:rounded-[5px] hover:text-white transition-all duration-600"><a href="">FAQ</a></li>
-    </ul>
+    <div
+      :class="{ '-top-full': !dropdown, 'top-20': dropdown }"
+      class="absolute -top-full left-0 max-lg:bg-white w-full flex flex-col gap-8 items-center lg:static lg:flex-row lg:justify-between"
+    >
+      <ul class="flex flex-col m-2 font-semibold lg:flex-row lg:gap-8">
+        <li
+          class="w-full p-1.5 hover:bg-gray-700 hover:rounded-[5px] hover:text-white transition-all duration-600"
+        >
+          <a href="">Home</a>
+        </li>
+        <li
+          class="w-full p-1.5 hover:bg-gray-700 hover:rounded-[5px] hover:text-white transition-all duration-600"
+        >
+          <a href="">Weather</a>
+        </li>
+        <li
+          class="w-full p-1.5 hover:bg-gray-700 hover:rounded-[5px] hover:text-white transition-all duration-600"
+        >
+          <a href="">FAQ</a>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <ion-icon
+        @click="onToggleMenu()"
+        :name="menu"
+        class="text-3xl cursor-pointer lg:hidden"
+      ></ion-icon>
+    </div>
   </nav>
 </template>
