@@ -1,9 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section
-    class="flex flex-col md:flex-row font-[Poppins] p-6 sm:p-10 lg:p-20 gap-6 bg-linear-to-r from-yellow-400 to-red-200"
-  >
+  <section class="flex flex-col md:flex-row font-[Poppins] p-6 sm:p-10 lg:p-20 gap-6 bg-gray-100">
     <div
       class="flex flex-col items-center text-center lg:text-left sm:items-start justify-end w-full md:w-auto lg:pl-40"
     >
