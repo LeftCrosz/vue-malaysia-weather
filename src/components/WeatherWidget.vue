@@ -141,13 +141,13 @@ async function fetchWeather() {
       >
         Search your local weather
       </h2>
-      <div class="flex items-center">
+      <div class="flex items-center w-full justify-center">
         <input
           v-model="location"
           :disabled="loading"
           type="text"
           placeholder="Search your city here"
-          class="border text-2xl"
+          class="border lg:text-2xl"
           autocomplete="true"
         />
         <ion-icon
@@ -158,7 +158,7 @@ async function fetchWeather() {
       </div>
     </div>
     <div
-      class="bg-[#4c9e93]/60 relative flex items-center justify-center w-full p-2 text-white md:w-30% sm:text-2xl md:text-3xl lg:text-4xl"
+      class="bg-[#4c9e93]/60 relative flex items-center justify-center w-full p-2 text-white text-center md:w-30% sm:text-2xl md:text-3xl lg:text-4xl"
     >
       <p class="whitespace-pre-line">
         <ion-icon
