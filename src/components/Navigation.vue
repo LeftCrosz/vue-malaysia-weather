@@ -11,6 +11,7 @@ function onToggleMenu() {
 
 <template>
   <nav
+    id="home"
     class="flex items-center justify-between font-[Poppins] px-12 uppercase bg-gray border-b-2 border-slate-300 lg:static lg:flex-row lg:justify-between lg:gap-8"
   >
     <div>
@@ -27,17 +28,17 @@ function onToggleMenu() {
         <li
           class="w-full p-1.5 hover:bg-gray-700 hover:rounded-[5px] hover:text-white transition-all duration-600"
         >
-          <a href="">Home</a>
+          <a href="#home">Home</a>
         </li>
         <li
           class="w-full p-1.5 hover:bg-gray-700 hover:rounded-[5px] hover:text-white transition-all duration-600"
         >
-          <a href="">Weather</a>
+          <a href="#weather">Weather</a>
         </li>
         <li
           class="w-full p-1.5 hover:bg-gray-700 hover:rounded-[5px] hover:text-white transition-all duration-600"
         >
-          <a href="">FAQ</a>
+          <a href="#faq">FAQ</a>
         </li>
       </ul>
     </div>

@@ -5,7 +5,6 @@ const location = ref('')
 const loading = ref(false)
 const date = ref(new Date().toLocaleDateString())
 const localTime = ref(new Date().toLocaleTimeString('en-GB'))
-console.log(localTime)
 
 const locations = ref(['Kuala Lumpur', 'Cheras', 'Kajang', 'Cyberjaya'])
 
@@ -75,7 +74,7 @@ async function fetchWeatherFor(locationName: string) {
 
       results.value[locationName] =
         `${forecast.location.location_name}\n` +
-        `Current: ${currentForecast}\n` +
+        `${currentForecast}\n` +
         `Low: ${forecast.min_temp}°\n` +
         `High: ${forecast.max_temp}°`
     } else {
@@ -101,39 +100,73 @@ async function fetchWeather() {
 </script>
 
 <template>
-  <h3 class="text-center text-[40px] font-bold uppercase my-5">Current Forecast</h3>
-  <section class="flex flex-col items-center justify-center gap-8 px-10 font-[Poppins] lg:flex-row">
-    <div
-      v-for="(loc, i) in locations"
-      :key="i"
-      class="flex flex-col justify-center border w-50 p-3 bg-green-800 text-white hover:scale-115 transition duration-300 ease-in-out"
-    >
-      <ion-icon
-        class="flex items-center justify-center w-full text-3xl"
-        :name="iconForecast[rawForecast[loc] ?? ''] ?? 'chevron-collapse'"
-      ></ion-icon>
-      <p class="text-center whitespace-pre-line">
-        {{ results[loc] ?? 'Loading...' }}
-      </p>
+  <section id="weather" class="flex flex-col items-center justify-center px-10 font-[Poppins]">
+    <h3 class="text-center font-bold uppercase my-5 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+      Current Forecast
+    </h3>
+    <div class="flex flex-col gap-8 px-10 font-[Poppins] lg:flex-row">
+      <div
+        v-for="(loc, i) in locations"
+        :key="i"
+        class="flex flex-col justify-center border w-50 p-3 bg-[#38786a]/95 rounded-2xl text-shadow-md text-shadow-gray-600 text-white hover:scale-105 transition duration-300 ease-in-out"
+      >
+        <ion-icon
+          class="flex items-center justify-center w-full text-3xl drop-shadow-lg"
+          :name="iconForecast[rawForecast[loc] ?? ''] ?? 'chevron-collapse'"
+        ></ion-icon>
+        <p class="text-center whitespace-pre-line">
+          {{ results[loc] ?? 'Loading...' }}
+        </p>
+      </div>
     </div>
   </section>
 
-  <section @keyup.enter="fetchWeather()" class="flex flex-col m-5 justify-center items-center">
-    <div>
-      <input
-        v-model="location"
-        :disabled="loading"
-        type="text"
-        placeholder="Search location here"
-        class="border text-2xl"
-      />
-      <ion-icon
-        @click="fetchWeather()"
-        class="text-3xl cursor-pointer gap-8"
-        name="search-circle-outline"
-      ></ion-icon>
+  <section
+    class="relative h-50% w-full overflow-hidden flex flex-col mt-20 md:flex-row font-[Poppins] bg-[#122e21]"
+  >
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      class="absolute insert-0 w-full h-full object-cover z-0 rotate-y-180"
+    >
+      <source src="../assets/hero.mp4" type="video/mp4" />
+    </video>
+    <div
+      class="relative flex flex-col items-center text-center md:text-left justify-end w-full text-white h-full mt-10 mb-10 lg:p-20 md:p-10"
+    >
+      <h2
+        class="font-extrabold sm:text-2xl md:text-3xl lg:text-4xl uppercase select-none leading-tight"
+      >
+        Search your local weather
+      </h2>
+      <div class="flex items-center">
+        <input
+          v-model="location"
+          :disabled="loading"
+          type="text"
+          placeholder="Search your city here"
+          class="border text-2xl"
+          autocomplete="true"
+        />
+        <ion-icon
+          @click="fetchWeather()"
+          class="size-10 cursor-pointer gap-8"
+          name="search-circle-outline"
+        ></ion-icon>
+      </div>
     </div>
-
-    <p class="font-bold text-2xl whitespace-pre-line">{{ results[location] }}</p>
+    <div
+      class="bg-[#4c9e93]/60 relative flex items-center justify-center w-full p-2 text-white md:w-30% sm:text-2xl md:text-3xl lg:text-4xl"
+    >
+      <p class="whitespace-pre-line">
+        <ion-icon
+          class="flex items-center justify-center w-full"
+          :name="iconForecast[rawForecast[location] ?? ''] ?? 'chevron-collapse'"
+        ></ion-icon>
+        {{ results[location] ?? 'Your forecast is one search away' }}
+      </p>
+    </div>
   </section>
 </template>

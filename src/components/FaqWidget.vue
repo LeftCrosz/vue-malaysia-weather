@@ -16,8 +16,8 @@ function togglefaq(faq: faqItems) {
 </script>
 
 <template>
-  <section class="my-10">
-    <h3 class="text-center text-[40px] font-bold">FAQ</h3>
+  <section id="faq" class="my-10">
+    <h3 class="text-center font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">FAQ</h3>
     <div
       v-for="(faq, index) in faqList"
       :key="index"
@@ -27,11 +27,11 @@ function togglefaq(faq: faqItems) {
       <div
         class="text-[20px] font-bold p-3 border-gray-200 w-full max-w-3xl"
         :class="{
-          'bg-gray-400 text-black': index % 2 != 0,
-          'bg-gray-600 text-zinc-200': index % 2 == 0,
+          'bg-[#4c9e93]/60 text-black': index % 2 != 0,
+          'bg-[#4c9e93]/80 text-black': index % 2 == 0,
         }"
       >
-        <div class="flex justify-between items-center">
+        <div class="flex justify-between items-center sm:text-2xl">
           <p>Q: {{ faq.question }}</p>
 
           <svg
