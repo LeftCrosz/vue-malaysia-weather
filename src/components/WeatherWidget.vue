@@ -122,7 +122,7 @@ async function fetchWeather() {
   </section>
 
   <section
-    class="relative h-50% w-full overflow-hidden flex flex-col mt-20 md:flex-row font-[Poppins] bg-[#122e21]"
+    class="relative h-50% w-full overflow-hidden flex flex-col mt-20 md:flex-row font-[Poppins]"
   >
     <video
       autoplay
