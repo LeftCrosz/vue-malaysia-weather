@@ -1,8 +1,8 @@
 # 🌧️ Malaysia Weather
 
-A simple, responsive weather forecast web app for Malaysia: built to answer life's most pressing question: **should you bring an umbrella today?**
+A simple, responsive weather forecast web app for Malaysia.
 
-Built with Vue 3, Vite, Tailwind CSS and Typescript
+Built with Vue.JS, Vite, Tailwind CSS and Typescript
 
 
 ## Tech Stack
@@ -17,20 +17,6 @@ Built with Vue 3, Vite, Tailwind CSS and Typescript
 [VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
 
 
-## Project Setup
+### API Provided by MET Malaysia
 
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
+[MET Malaysia](https://www.met.gov.my/)
